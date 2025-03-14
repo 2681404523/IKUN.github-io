@@ -1,0 +1,164 @@
+
+:root {
+    --primary-color: #FF9ECD;    
+    --secondary-color: #B4E9FF;  
+    --accent-color: #FFD6E5;     
+    --text-color: #4A4A4A;       
+    --font-cute: 'Quicksand', sans-serif;  
+}
+
+body {
+    font-family: var(--font-cute);
+    color: var(--text-color);
+}
+
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+.hero-section {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('path/to/bubble-pattern.png') repeat;
+    opacity: 0.1;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 158, 205, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 158, 205, 0.4);
+}
+
+
+.featured-products {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.featured-products h2 {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.featured-products h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+
+footer {
+    background: linear-gradient(to right, #2c3e50, #3498db) !important;
+}
+
+footer h5 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.2rem;
+    }
+    
+    .featured-products h2 {
+        font-size: 2rem;
+    }
+}
+
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero-section img {
+    animation: float 3s ease-in-out infinite;
+}
